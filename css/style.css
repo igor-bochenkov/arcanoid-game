@@ -1,0 +1,437 @@
+@font-face {
+  font-family: Calculator;
+  font-display: swap;
+  src: url("../fonts/Calculator.woff") format("woff"), url("../fonts/Calculator.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: PressStart2P;
+  font-display: swap;
+  src: url("../fonts/PressStart2P-Regular.woff") format("woff"), url("../fonts/PressStart2P-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside,
+section {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  line-height: 1;
+  font-family: "";
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: "";
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "PressStart2P";
+  font-size: 16px;
+  background: url("../img/bg-body.webp") center/cover repeat;
+  color: #fff;
+}
+body.lock {
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 10px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.game {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.game__title {
+  font-family: "PressStart2P";
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: orange;
+}
+.game__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-bottom: 15px;
+}
+.game__top span {
+  display: block;
+  padding: 5px;
+  font-size: 25px;
+  color: green;
+}
+.game__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 25px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.game__bg-sound {
+  width: 200px;
+  cursor: pointer;
+}
+.game__bg-sound span {
+  color: red;
+}
+.game__bg-sound.active span {
+  color: green;
+}
+.game__timer {
+  width: 250px;
+}
+.game__timer--counter {
+  font-size: 22px;
+}
+#arcanoid {
+  border: 2px solid rgb(186, 190, 212);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 16px rgba(187, 187, 187, 0.8);
+          box-shadow: 0 0 16px rgba(187, 187, 187, 0.8);
+}
+
+.footer {
+  padding: 20px 0px;
+}
+.footer__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__item--data {
+  font-weight: 700;
+  font-size: 22px;
+}
+@media (max-width: 400px) {
+  .footer__item--data {
+    font-size: 25px;
+  }
+}
+
+.footer__item--github,
+.footer__item--rss {
+  background-color: #fff;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transition: -webkit-box-shadow 0.8s ease;
+  transition: -webkit-box-shadow 0.8s ease;
+  transition: box-shadow 0.8s ease;
+  transition: box-shadow 0.8s ease, -webkit-box-shadow 0.8s ease;
+}
+@media (max-width: 400px) {
+  .footer__item--github,
+  .footer__item--rss {
+    width: 30px;
+  }
+}
+@media (hover: hover) {
+  .footer__item--github:hover,
+  .footer__item--rss:hover {
+    -webkit-box-shadow: 0 0 30px #fff;
+            box-shadow: 0 0 30px #fff;
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.modal__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.8);
+}
+.modal__content {
+  position: relative;
+  padding: 30px;
+  background-color: rgba(13, 3, 62, 0.8);
+  max-width: 750px;
+}
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 10px;
+}
+
+.modal-hide {
+  display: none;
+}
+
+.modal-show {
+  display: block;
+  -webkit-animation-name: showModal;
+          animation-name: showModal;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+@-webkit-keyframes showModal {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  50% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes showModal {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  50% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+.modal-rules__description {
+  line-height: 1.2;
+}
+.modal-rules__description h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: orange;
+}
+.modal-rules__description p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.modal-top__list {
+  font-size: 20px;
+}
+.modal-top__list p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.modal-top__list p:not(:last-child) {
+  margin-bottom: 16px;
+}
+.modal-top__list p span {
+  margin: 0px 40px;
+}
+
+.player {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+      -ms-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+  top: 450px;
+  display: block;
+  width: 300px;
+  background-color: rgba(13, 3, 62, 0.9);
+}
+.player__input {
+  display: block;
+  background-color: rgba(13, 3, 62, 0);
+  color: #fff;
+  font-size: 18px;
+  font-family: "PressStart2P";
+  padding: 10px;
+}
+.player__input::-webkit-input-placeholder {
+  font-family: "PressStart2P";
+  color: #fff;
+}
+.player__input::-moz-placeholder {
+  font-family: "PressStart2P";
+  color: #fff;
+}
+.player__input:-ms-input-placeholder {
+  font-family: "PressStart2P";
+  color: #fff;
+}
+.player__input::-ms-input-placeholder {
+  font-family: "PressStart2P";
+  color: #fff;
+}
+.player__input::placeholder {
+  font-family: "PressStart2P";
+  color: #fff;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.player-hide {
+  display: none;
+}
+
+.player-show {
+  display: block;
+}
+
+.link {
+  cursor: pointer;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+@media (hover: hover) {
+  .link:hover {
+    color: orange;
+  }
+}

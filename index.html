@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Arcanoid</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="game">
+			<div class="game__container container">
+				<h1 class="game__title">Arcanoid</h1>
+				<div class="game__top"><span class="link">TOP-10</span></div>
+				<div class="game__info">
+					<div class="game__bg-sound link active">music: <span>ON</span></div>
+					<div class="game__timer">time: <span>0</span></div>
+					<div class="game__rules link">game rules</div>
+				</div>
+				<canvas id="arcanoid" width="1024" height="576"></canvas>
+				<audio src="sounds/ME_8-bit.mp3" class="audio-background"></audio>
+			</div>
+
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container container">
+				<div class="footer__items">
+					<a href="https://github.com/igor-bochenkov" class="footer__item footer__item--github" target="_blank">
+						<img src="img/footer/github.svg" alt="github">
+					</a>
+					<div class="footer__item footer__item--data">2024</div>
+					<a href="https://rs.school/courses/javascript-preschool-ru" class="footer__item footer__item--rss"
+						target="_blank">
+						<img src="img/footer/rss-logo.svg" alt="rsschool">
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="modal modal-rules modal-hide">
+		<div class="modal__body">
+			<div class="modal__content">
+				<div class="modal__close link">X</div>
+				<div class="modal-rules__description">
+					<h3>Цель игры</h3>
+					<p>Уничтожить мячом все панели за минимальное время.</p>
+					<h3>Правила игры</h3>
+					<p>
+						Игрок управляет небольшой платформой, которую он перемещает горизонтально от одной стенки до другой.
+						Платформу нужно подставлять под шарик, чтобы тот не упал вниз, иначе игра закончится пройгрышем.
+						Удар шарика по панели приводит к его уничтожению.
+					</p>
+					<h3>Управление</h3>
+					<p> - перемещение платформы: ← → / [A, D]</p>
+					<p> - старт мяча: SPACE / [W]</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal modal-top modal-hide">
+		<div class="modal__body">
+			<div class="modal__content">
+				<div class="modal__close link">X</div>
+				<div class="modal-top__list"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="player player-hide">
+		<form action="#" class="player__form">
+			<input type="text" name="name" placeholder="Enter your name" class="player__input" autocomplete="off"
+				autofocus>
+		</form>
+	</div>
+
+	<script src="js/script.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>
